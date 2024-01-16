@@ -53,7 +53,7 @@ class BaseModel:
         object
         """
         form = '%Y-%m-%dT%H:%M:%S.%f'
-        dct = self.__dict__
+        dct = {**self.__dict__}
         dct["__class__"] = self.__class__.__name__
         if isinstance(self.created_at, datetime):
             dct["created_at"] = self.created_at.strftime(form)
