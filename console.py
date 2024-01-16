@@ -17,7 +17,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
-classes = storage
+classes = storage.models
 
 
 class HBNBCommand(Cmd):
