@@ -33,7 +33,7 @@ class BaseModel:
                     self.id = value
                 s1 = "updated_at"
                 s2 = "created_at"
-                elif key != "__class__" and key != s1 and key != s2:
+                if key != "__class__" and key != s1 and key != s2:
                     setattr(self, key, value)
 
     def __str__(self):
@@ -52,8 +52,11 @@ class BaseModel:
         """returns the dict representation of the
         object
         """
+        form = '%Y-%m-%dT%H:%M:%S.%f'
         dct = self.__dict__
         dct["__class__"] = self.__class__.__name__
-        dct["created_at"] = self.created_at.strftime('%Y-%m-%dT%H:%M:%S.%f')
-        dct["updated_at"] = self.updated_at.strftime('%Y-%m-%dT%H:%M:%S.%f')
+        if isinstance(self.created_at, datetime):
+            dct["created_at"] = self.created_at.strftime(form)
+        if isinstance(self.updated_at, datetime):
+            dct["updated_at"] = self.updated_at.strftime(form)
         return dct

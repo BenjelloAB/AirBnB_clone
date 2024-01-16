@@ -29,7 +29,7 @@ class FileStorage:
                 des = json.loads(f.read())
             from models.base_model import BaseModel
             for key, dict_obj in des.items():
-                st = dict_obj["__class_"]
+                st = dict_obj["__class__"]
                 FileStorage.__objects[key] = eval(st)(**dict_obj)
                 # FileStorage.__objects[key] = BaseModel(**dict_obj)
         except (FileNotFoundError, JSONDecodeError):
