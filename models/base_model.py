@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 module that define the BaseModel class which all classes will inherit from
 """
 import uuid
@@ -11,7 +11,7 @@ class BaseModel:
     """
     the base model class
     """
-    
+
     def __init__(self, *args, **kwargs):
         """Init the object"""
         if len(kwargs) == 0:
@@ -24,28 +24,32 @@ class BaseModel:
                 kwargs['id'] = str(uuid.uuid4())
             for key, value in kwargs.items():
                 if key == "created_at":
-                    self.created_at = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                    self.created_at = datetime.strptime(value,
+                                                        "%Y-%m-%dT%H:%M:%S.%f")
                 if key == "updated_at":
-                    self.updated_at = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                    self.updated_at = datetime.strptime(value,
+                                                        "%Y-%m-%dT%H:%M:%S.%f")
                 if key == "id":
                     self.id = value
-                elif key != "__class__" and key != "updated_at" and key != "created_at":
+                s1 = "updated_at"
+                s2 = "created_at"
+                elif key != "__class__" and key != s1 and key != s2:
                     setattr(self, key, value)
-                
-                
+
     def __str__(self):
         """str representation of the current object"""
         return "[{}] ({}) {}".format(self.__class__.__name__,
                                      self.id,
                                      self.__dict__)
+
     def save(self):
         """saves the object to the json file
         """
         self.updated_at = datetime.now()
         storage.save()
-    
+
     def to_dict(self):
-        """returns the dict representation of the 
+        """returns the dict representation of the
         object
         """
         dct = self.__dict__
