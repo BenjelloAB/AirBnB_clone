@@ -1,0 +1,89 @@
+.places {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+.places h1 {
+  font-size: 30px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.places article {
+  position: relative;
+  min-width: 390px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px #ff5a5f solid;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.places article div.price_by_night {
+  color: #ff5a5f;
+  border: 4px #ff5a5f solid;
+  min-width: 60px;
+  height: 60px;
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.places article div.information {
+  height: 80px;
+  border-top: 1px solid #dddddd;
+  display: flex;
+}
+.places article div.user {
+  align-self: flex-start;
+}
+.places article div.user > span {
+  font-weight: bolder;
+}.places article div.description 
+{
+    max-width:300px
+}
+
+.places article div.information .max_guest,
+.places article div.information > div.number_bathrooms,
+.places article div.information > div.number_rooms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  margin-top: 6px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.places article div.information .max_guest {
+  background-image: url(../images/icon_group.png);
+}
+.places article div.information > div.number_bathrooms {
+  background-image: url(../images/icon_bath.png);
+}
+.places article div.information > div.number_rooms {
+  background-image: url(../images/icon_bed.png);
+}
