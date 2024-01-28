@@ -34,28 +34,3 @@
   opacity: 90%;
 }
 
-.filters > div:first-child {
-  border-right: 1px solid #dddddd;
-}
-.filters > div.locations,
-.filters > div.amenities {
-  height: 100%;
-  width: 25%;
-  text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.filters > div.locations h4,
-.filters > div.amenities h4 {
-  font-weight: 400;
-  font-size: 14px;
-  /* padding-bottom: 10px; */
-  line-height: 0;
-}
-.filters > div.locations h3,
-.filters > div.amenities h3 {
-  font-weight: 600;
-  line-height: 0;
-}
