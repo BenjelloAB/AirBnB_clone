@@ -1,0 +1,31 @@
+.places{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+
+}
+.places h1{
+    font-size: 30px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.places article{
+    min-width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px #FF5A5F solid;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
